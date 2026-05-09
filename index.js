@@ -16,6 +16,15 @@ app.post("/webhook/call", (req, res) => {
     return res.sendStatus(200);
 });
 
+app.get("/webhook/call", (req, res) => {
+
+    console.log("FULL QUERY:", req.query);
+
+    console.log("Caller Number:", req.query.CallFrom);
+
+    return res.sendStatus(200);
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
 });
